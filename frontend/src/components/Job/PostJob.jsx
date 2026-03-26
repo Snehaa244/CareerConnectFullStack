@@ -51,8 +51,9 @@ const PostJob = () => {
           salaryTo,
         };
 
+    const API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
     await axios
-      .post(`${import.meta.env.VITE_API_URL}/api/v1/job/post`, fixedJobData, {
+      .post(`${API_BASE_URL}/api/v1/job/post`, fixedJobData, {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",

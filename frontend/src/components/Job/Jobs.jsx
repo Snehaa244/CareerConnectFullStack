@@ -8,9 +8,10 @@ const Jobs = () => {
   const { isAuthorized } = useContext(Context);
   const navigateTo = useNavigate();
   useEffect(() => {
+    const API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
     try {
       axios
-        .get(`${import.meta.env.VITE_API_URL}/api/v1/job/getall`, {
+        .get(`${API_BASE_URL}/api/v1/job/getall`, {
           withCredentials: true,
         })
         .then((res) => {

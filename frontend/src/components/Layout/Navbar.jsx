@@ -12,9 +12,10 @@ const Navbar = () => {
   const navigateTo = useNavigate();
 
   const handleLogout = async () => {
+    const API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/v1/user/logout`,
+        `${API_BASE_URL}/api/v1/user/logout`,
         {
           withCredentials: true,
         }
