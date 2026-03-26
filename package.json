@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node backend/server.js"
+  },
   "dependencies": {
     "tushar-message": "^1.0.0"
   }
