@@ -13,9 +13,7 @@ import MyChatBot from "./Chatbot";
 
 const Home = () => {
   const { isAuthorized } = useContext(Context);
-  if (!isAuthorized) {
-    return <Navigate to={"/login"} />;
-  }
+  
   return (
     <>
       <section className="homePage page bg-zinc-900">

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { RiLock2Fill } from "react-icons/ri";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import { FaRegUser } from "react-icons/fa";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -13,6 +13,8 @@ const Login = () => {
   const [role, setRole] = useState("");
 
   const { isAuthorized, setIsAuthorized } = useContext(Context);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -28,6 +30,7 @@ const Login = () => {
         }
       );
       toast.success(data.message);
+      localStorage.setItem("token", data.token || "true");
       setEmail("");
       setPassword("");
       setRole("");
@@ -38,7 +41,7 @@ const Login = () => {
   };
 
   if(isAuthorized){
-    return <Navigate to={'/'}/>
+    return <Navigate to={from} replace />
   }
 
   return (

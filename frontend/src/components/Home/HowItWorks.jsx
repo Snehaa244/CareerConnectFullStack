@@ -1,8 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { Context } from '../../main';
 
 const Features = () => {
   const navigate = useNavigate();
+  const { isAuthorized } = useContext(Context);
 
   const features = [
     {
@@ -50,6 +53,10 @@ const Features = () => {
             <button
               aria-label="Get Started"
               onClick={() => {
+                if (!isAuthorized) {
+                  navigate("/login");
+                  return;
+                }
                 if (feature.isExternal) {
                   window.location.href = feature.routePath; 
                 } else {

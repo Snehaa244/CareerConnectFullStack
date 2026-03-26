@@ -20,6 +20,8 @@ import LinkedIn from "./components/LinkedIn";
 import Events from "./components/Home/Events";
 import JobSeekerDashboard from "./components/JobSeekerDashboard";
 import RecruiterView from "./components/RecruiterView";
+import ProtectedRoute from "./components/Auth/ProtectedRoute";
+import Features from "./components/Home/HowItWorks";
 
 // Profile component for conditional rendering
 const Profile = () => {
@@ -67,6 +69,7 @@ const App = () => {
           <Route path="/events" element={<Events />} />
           <Route path="/LinkedIn" element={<LinkedIn />} />
           <Route path="/Profile" element={<Profile />} /> {/* Role-based rendering */}
+          <Route path="/features" element={<ProtectedRoute><Features /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
           <Route path="/jobseekerdashboard" element={<JobSeekerDashboard />} />
           <Route path="/RecruiterView" element={<RecruiterView />} />
