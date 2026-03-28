@@ -32,8 +32,8 @@ const Navbar = () => {
   return (
     <nav className={"navbarShow"}>
       <div className="container">
-        <div className="logo text-white mt-5">
-         CarrerConnect
+        <div className="logo text-white">
+          CarrerConnect
         </div>
         <ul className={!show ? "menu" : "show-menu menu"}>
           <li>

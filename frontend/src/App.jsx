@@ -37,6 +37,8 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async () => {
       const API_BASE_URL = import.meta.env.VITE_API_URL || "https://careerconnectfullstack-production.up.railway.app";
+      console.log("VITE_API_URL from env:", import.meta.env.VITE_API_URL);
+      console.log("Using API_BASE_URL:", API_BASE_URL);
       try {
         const response = await axios.get(
           `${API_BASE_URL}/api/v1/user/getuser`,

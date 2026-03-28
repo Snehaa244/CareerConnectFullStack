@@ -56,7 +56,7 @@ const Register = () => {
         <div className="container">
           <div className="header">
             {/* <img src="/careerconnect-black.png" alt="logo" /> */}
-            <h3>Create a new account</h3>
+            <h3 className="text-white">Create a new account</h3>
           </div>
           <form className="text-white">
             <div className="inputTag ">
